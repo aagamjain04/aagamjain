@@ -1,6 +1,6 @@
 body {
-  background-color: #282121;
-  color: #fff;
+  background-color: #f6f6f6;
+  color: #070707;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -58,7 +58,7 @@ body {
 }
 .main a {
   text-decoration: none;
-  color: #fff;
+  color: #060606;
   font-size: 0.9rem;
 }
 .main a:hover {
