@@ -127,8 +127,8 @@ ul {
 }
 
 .hero-name {
-  font-size: clamp(2.8rem, 6vw, 4.6rem);
-  max-width: 8.5ch;
+  font-size: clamp(2.6rem, 5.5vw, 4.1rem);
+  max-width: 9.5ch;
   letter-spacing: -0.045em;
   margin-top: 4px;
   color: #181412;
@@ -136,10 +136,10 @@ ul {
 }
 
 .hero-title {
-  max-width: 18ch;
-  margin-top: 18px;
-  font-size: clamp(1.12rem, 1.8vw, 1.32rem);
-  line-height: 1.58;
+  max-width: 26ch;
+  margin-top: 14px;
+  font-size: clamp(1.04rem, 1.5vw, 1.18rem);
+  line-height: 1.65;
   font-weight: 600;
   color: var(--secondary);
 }
@@ -173,9 +173,9 @@ ul {
 
 .lead {
   max-width: 58ch;
-  margin-top: 24px;
-  font-size: 1rem;
-  line-height: 1.85;
+  margin-top: 20px;
+  font-size: 0.96rem;
+  line-height: 1.8;
   font-weight: 400;
   color: var(--muted);
 }
@@ -184,7 +184,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .button {
@@ -239,6 +239,23 @@ ul {
   font-size: 0.92rem;
   font-weight: 500;
   box-shadow: 0 8px 20px rgba(54, 37, 18, 0.05);
+}
+
+.contact-chip-email {
+  gap: 12px;
+}
+
+.contact-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.contact-value {
+  color: var(--text);
+  font-weight: 500;
 }
 
 .contact-chip:hover {
@@ -341,7 +358,7 @@ ul {
 .section-heading h2,
 .info-card h2 {
   font-size: clamp(1.65rem, 3vw, 2.35rem);
-  line-height: 1.08;
+  line-height: 1.16;
   letter-spacing: -0.03em;
 }
 
@@ -374,6 +391,35 @@ ul {
   gap: 22px;
   padding: 24px;
   border-radius: var(--radius-lg);
+  position: relative;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transform: scaleY(0.45);
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(35, 90, 106, 0.16);
+  background: rgba(255, 253, 249, 0.9);
+  box-shadow: 0 18px 36px rgba(54, 37, 18, 0.08);
+}
+
+.timeline-item:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
 }
 
 .timeline-meta {
@@ -414,7 +460,7 @@ ul {
 
 .timeline-content h3 {
   font-size: 1.35rem;
-  line-height: 1.12;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
