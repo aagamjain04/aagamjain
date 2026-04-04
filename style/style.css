@@ -87,16 +87,9 @@ ul {
 .topbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 16px;
-  margin-bottom: 42px;
-}
-
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
 .topbar-links {
@@ -117,7 +110,7 @@ ul {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 380px);
   gap: 30px;
-  align-items: center;
+  align-items: start;
 }
 
 .eyebrow,
@@ -135,6 +128,7 @@ ul {
   font-size: clamp(3.1rem, 7vw, 5.3rem);
   max-width: 10ch;
   letter-spacing: -0.04em;
+  margin-top: 6px;
 }
 
 .hero-title {
@@ -474,8 +468,8 @@ ul {
 
   .topbar {
     align-items: flex-start;
-    flex-direction: column;
-    margin-bottom: 28px;
+    justify-content: flex-start;
+    margin-bottom: 18px;
   }
 
   .topbar-links {
