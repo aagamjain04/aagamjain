@@ -624,13 +624,20 @@ strong {
   width: 44px;
   height: 44px;
   border-radius: 12px;
+  overflow: hidden;
   font-size: 1.25rem;
   color: #fff;
 }
 
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .logo-salesforce { background: #00a1e0; }
 .logo-jpmc { background: #5a4a3a; }
-.logo-crio { background: #00a278; }
+.logo-crio { background: transparent; }
 
 .badge {
   margin-left: auto;
