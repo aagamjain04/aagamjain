@@ -787,12 +787,10 @@ strong {
 }
 
 .achievement > i {
+  align-self: flex-start;
   margin-bottom: 10px;
   font-size: 1.4rem;
-  background: var(--accent-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent-1);
 }
 
 .achievement h3 {
