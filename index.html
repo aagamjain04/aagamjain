@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
+    <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6EKMD14T4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,29 +11,53 @@
     </script>
     <script async src="https://cdn.seline.com/seline.js" data-token="05dd23118a595f0"></script>
 
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      (function () {
+        document.documentElement.classList.add("js");
+        try {
+          var saved = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+        } catch (e) {}
+      })();
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aagam Jain | Software Engineer at Salesforce</title>
     <meta
       name="description"
-      content="Aagam Jain is a Software Engineer at JPMorgan Chase &amp; Co. Explore experience, education, competitive programming profiles, and resume links."
+      content="Aagam Jain is a Software Engineer 2 at Salesforce (Agentforce Marketing), building production-grade AI agents, scalable backend systems, and data platforms."
     >
+    <meta name="theme-color" content="#0b0d12">
+    <link rel="canonical" href="https://aagamjain.netlify.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aagamjain.netlify.app/">
     <meta property="og:title" content="Aagam Jain | Software Engineer">
     <meta
       property="og:description"
-      content="Software Engineer at JPMorgan Chase &amp; Co. building strong foundations in backend engineering, problem solving, and scalable systems."
+      content="Software Engineer 2 at Salesforce building agentic systems, scalable backends, and data platforms."
     >
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="IMG_4285_resized.png">
-    <title>Aagam Jain | Software Engineer</title>
+    <meta property="og:image" content="https://aagamjain.netlify.app/assets/profile-resized-1140.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
       rel="stylesheet"
     >
     <script src="https://kit.fontawesome.com/577873a0ee.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link
+      rel="preload"
+      as="image"
+      href="assets/profile-resized-760.jpg"
+      imagesrcset="assets/profile-resized-480.jpg 480w, assets/profile-resized-760.jpg 760w, assets/profile-resized-1140.jpg 1140w"
+      imagesizes="(max-width: 900px) 280px, 360px"
+    >
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js" defer></script>
   </head>
 
   <body>
@@ -46,288 +71,389 @@
       ></iframe>
     </noscript>
 
-    <div class="page-shell">
-      <header class="hero">
-        <nav class="topbar">
-          <div class="topbar-links">
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#profiles">Profiles</a>
-            <a href="https://drive.google.com/file/d/1lu_2durlsF9Nhgk82098hd5R97PYC1Lz/view?usp=drivesdk" target="_blank" rel="noreferrer">Resume</a>
-          </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <!-- ============ Navigation ============ -->
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="Aagam Jain, back to top">
+          <span class="brand-mark">AJ</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#profiles">Profiles</a>
         </nav>
 
-        <section class="hero-grid" id="top">
-          <div class="hero-copy">
-            <h2 class="hero-name">Aagam Jain</h2>
-            <p class="hero-title">Backend Developer focused on scalable systems, microservices, and production-grade engineering.</p>
-            <div class="hero-meta" aria-label="Profile summary">
-              <span><i class="fas fa-map-marker-alt"></i> Bengaluru, India</span>
-              <span><i class="fas fa-building"></i> JPMorgan Chase &amp; Co.</span>
-            </div>
-            <p class="lead">
-              Experienced backend developer with 3+ years of building and optimizing scalable, high-performance
-              backend systems. Skilled in Java, Spring Boot, and microservices, with a strong focus on clean code,
-              performance optimization, and fault-tolerant system design.
-            </p>
+        <div class="nav-actions">
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle color theme">
+            <i class="fas fa-moon theme-icon-dark" aria-hidden="true"></i>
+            <i class="fas fa-sun theme-icon-light" aria-hidden="true"></i>
+          </button>
+          <a class="btn btn-sm btn-primary nav-resume" href="assets/aagamjain_resume.pdf" target="_blank" rel="noopener">
+            Resume
+          </a>
+        </div>
+      </div>
+    </header>
 
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="https://drive.google.com/file/d/1lu_2durlsF9Nhgk82098hd5R97PYC1Lz/view?usp=drivesdk"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View Resume
-              </a>
-              <a
-                class="button button-linkedin"
-                href="https://www.linkedin.com/in/aagamjain04/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn
-              </a>
+    <main id="main">
+      <!-- ============ Hero ============ -->
+      <section class="hero container" id="top">
+        <div class="hero-copy reveal">
+          <h1 class="hero-name">Aagam Jain</h1>
+          <p class="hero-title">
+            Software Engineer building
+            <span class="gradient-text">production-grade AI agents</span>,
+            scalable backends, and data platforms.
+          </p>
 
-               <a class="button button-email" href="mailto:aagamjain.cs@gmail.com">
-                Email
-              </a>
-            </div>
+          <p class="hero-lead">
+            3+ years of experience across Salesforce and JPMorgan Chase &amp; Co. — shipping distributed systems in
+            Java &amp; Spring Boot, and now designing agentic systems with tool calling, grounding, and evaluation
+            guardrails.
+          </p>
 
-        
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="assets/aagamjain_resume.pdf" target="_blank" rel="noopener">
+              <i class="fas fa-file-lines" aria-hidden="true"></i> View Resume
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/aagamjain04/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a class="btn btn-ghost" href="mailto:aagamjain.cs@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Email
+            </a>
           </div>
 
-          <aside class="hero-card">
-            <img src="IMG_4285.png" alt="Portrait of Aagam Jain" class="profile-photo">
-            <div class="hero-card-content">
-              <p class="card-label">Current Focus</p>
-              <h2>Backend engineering for data platforms, payments, and high-throughput enterprise systems.</h2>
-              <p>
-                Hands-on experience across payments and data intelligence platforms, backed by strong competitive
-                programming results and a solid computer science foundation.
-              </p>
-              <div class="focus-pills" aria-label="Focus areas">
-                <span>Spring Boot</span>
-                <span>Microservices</span>
-                <span>System Design</span>
-              </div>
-            </div>
-          </aside>
-        </section>
-      </header>
+          <ul class="hero-meta" aria-label="Quick facts">
+            <li><i class="fas fa-location-dot" aria-hidden="true"></i> Bengaluru, India</li>
+            <li><i class="fas fa-briefcase" aria-hidden="true"></i> Software Engineer 2</li>
+            <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> NIE Mysore · 9.1 CGPA</li>
+          </ul>
+        </div>
 
-      <main>
-        <section class="section two-column">
-          <div class="section-heading">
-            <p class="section-kicker">Profile</p>
-            <h2>Professional summary</h2>
+        <div class="hero-visual reveal">
+          <div class="photo-frame">
+            <img
+              src="assets/profile-resized-760.jpg"
+              srcset="assets/profile-resized-480.jpg 480w, assets/profile-resized-760.jpg 760w, assets/profile-resized-1140.jpg 1140w"
+              sizes="(max-width: 900px) 280px, 360px"
+              width="760"
+              height="760"
+              alt="Portrait of Aagam Jain"
+              decoding="async"
+              fetchpriority="high"
+            >
           </div>
-          <div class="summary-card">
+          <div class="floating-card">
+            <span class="mono-label">current focus</span>
+            <p>Agent orchestration · MCP · Evals &amp; guardrails</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Stats ============ -->
+      <section class="container stats reveal" aria-label="Highlights">
+        <div class="stat"><span class="stat-value">3+</span><span class="stat-label">Years in industry</span></div>
+        <div class="stat"><span class="stat-value">2×</span><span class="stat-label">ACM-ICPC Regionalist</span></div>
+        <div class="stat"><span class="stat-value">1978</span><span class="stat-label">CodeChef max (4★)</span></div>
+        <div class="stat"><span class="stat-value">40%</span><span class="stat-label">Faster releases via automation</span></div>
+      </section>
+
+      <!-- ============ About ============ -->
+      <section class="section container" id="about">
+        <div class="section-head reveal">
+          <span class="mono-label">01 · about</span>
+          <h2>Summary</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card about-text reveal">
             <p>
-              Backend engineer with experience spanning internship, full-time engineering, and growth into
-              Software Engineer II at JPMorgan Chase &amp; Co. My work has focused on scalable APIs, database
-              migrations, deployment automation, regional production readiness, and operational tooling that
-              improves reliability and team velocity.
+              I'm a Software Engineer with 3+ years of experience building scalable backend systems, data platforms,
+              and AI agents. I care about clean code, performance, fault tolerance, and making agentic systems
+              reliable enough for production.
             </p>
             <p>
-              Alongside production engineering, I have stayed deeply active in competitive programming and
-              problem-setting, which continues to strengthen my problem solving, debugging, and systems thinking.
+              Today I'm at <strong>Salesforce</strong> on Agentforce Marketing, building agents that turn
+              natural-language campaign briefs into personalized, publish-ready landing pages and forms. Before that,
+              I spent over three years at <strong>JPMorgan Chase &amp; Co.</strong> across Payments and Asset
+              Management's ETF Data Intelligence Platform.
+            </p>
+            <p>
+              Outside work I've stayed close to competitive programming and problem-setting, which keeps my
+              problem solving, debugging, and systems thinking sharp.
             </p>
           </div>
-        </section>
-
-        <section class="section" id="experience">
-          <div class="section-heading">
-            <p class="section-kicker">Experience</p>
-            <h2>Career progression</h2>
+          <div class="card focus-card reveal">
+            <span class="mono-label">what i work on</span>
+            <ul class="focus-list">
+              <li><i class="fas fa-robot" aria-hidden="true"></i><div><strong>Agentic systems</strong><span>Orchestration, tool calling, MCP, human-in-the-loop</span></div></li>
+              <li><i class="fas fa-server" aria-hidden="true"></i><div><strong>Backend engineering</strong><span>Java, Spring Boot, microservices, distributed design</span></div></li>
+              <li><i class="fas fa-database" aria-hidden="true"></i><div><strong>Data platforms</strong><span>Analytics, reporting, migrations at enterprise scale</span></div></li>
+              <li><i class="fas fa-vial-circle-check" aria-hidden="true"></i><div><strong>Quality &amp; evals</strong><span>Evaluation frameworks, guardrails, reliability</span></div></li>
+            </ul>
           </div>
+        </div>
+      </section>
 
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <span>Nov 2025 - Present</span>
-                <span>Bengaluru</span>
-              </div>
-              <div class="timeline-content">
-                <h3>Software Engineer II</h3>
-                <p class="timeline-company">JPMorgan Chase &amp; Co. · Asset Management</p>
-                <p>
-                  Building scalable and intelligent data platforms supporting ETF analytics, reporting,
-                  investment insights, and AI agents.
-                </p>
-              </div>
-            </article>
+      <!-- ============ Experience ============ -->
+      <section class="section container" id="experience">
+        <div class="section-head reveal">
+          <span class="mono-label">02 · experience</span>
+          <h2>Where I've worked</h2>
+        </div>
 
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <span>Jul 2023 - Nov 2025</span>
-                <span>Bengaluru</span>
-              </div>
-              <div class="timeline-content">
-                <h3>Software Engineer</h3>
-                <p class="timeline-company">JPMorgan Chase &amp; Co. · Payments</p>
-                <ul class="detail-list">
-                  <li>Fixed a critical billing bug, improving invoice accuracy and stakeholder trust.</li>
-                  <li>Worked on India Check Issuance for Manager's Cheque and Corporate Cheque flows across multiple banking channels.</li>
-                  <li>Migrated the database from DBaaS to Gaia Oracle Service with zero issues, removing GoldenGate dependency and reducing cost.</li>
-                  <li>Built a data patching tool that enabled the ops team to update databases 5x faster with fewer mistakes.</li>
-                  <li>Led deployment automation work that reduced manual effort and improved release time by 40%.</li>
-                  <li>Implemented networking and load balancing for regional deployment to help drive production readiness.</li>
+        <div class="timeline">
+          <!-- Salesforce -->
+          <article class="company reveal">
+            <div class="company-rail" aria-hidden="true"><span class="rail-dot is-current"></span></div>
+            <div class="card company-card">
+              <header class="company-header">
+                <div class="company-logo logo-salesforce" aria-hidden="true"><i class="fab fa-salesforce"></i></div>
+                <div>
+                  <h3>Salesforce</h3>
+                  <p class="company-sub">Bengaluru, India</p>
+                </div>
+                <span class="badge badge-live">Current</span>
+              </header>
+
+              <div class="role">
+                <div class="role-head">
+                  <h4>Software Engineer 2 · Agentforce Marketing</h4>
+                  <span class="role-date">Aug 2026 — Present</span>
+                </div>
+                <ul class="bullets">
+                  <li>
+                    Building the <strong>Agentic Content Force Agent</strong>, which generates, personalizes, and
+                    publishes landing pages and forms from natural-language campaign briefs.
+                  </li>
+                  <li>
+                    Developing agent orchestration with <strong>MCP/tool integrations</strong>, customer-data
+                    grounding, and human-in-the-loop review before publishing to Salesforce CMS.
+                  </li>
+                  <li>
+                    Designing <strong>evaluation frameworks and guardrails</strong> to measure output quality,
+                    brand-voice consistency, and form data-capture correctness.
+                  </li>
+                </ul>
+                <ul class="chips" aria-label="Technologies">
+                  <li>AI Agents</li><li>MCP</li><li>Tool Calling</li><li>Evals</li><li>LLM Prompting</li>
                 </ul>
               </div>
-            </article>
+            </div>
+          </article>
 
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <span>Feb 2023 - Jun 2023</span>
-                <span>Internship</span>
-              </div>
-              <div class="timeline-content">
-                <h3>Software Engineer Intern</h3>
-                <p class="timeline-company">JPMorgan Chase &amp; Co.</p>
-                <ul class="detail-list">
-                  <li>Contributed to the Cheque Engine Processing Application, supporting payment verification across partner banks and clients.</li>
-                  <li>Developed a frontend module for the India market using React.js and SQL, improving user experience and processing efficiency.</li>
+          <!-- JPMorgan Chase -->
+          <article class="company reveal">
+            <div class="company-rail" aria-hidden="true"><span class="rail-dot"></span></div>
+            <div class="card company-card">
+              <header class="company-header">
+                <div class="company-logo logo-jpmc" aria-hidden="true"><i class="fas fa-building-columns"></i></div>
+                <div>
+                  <h3>JPMorgan Chase &amp; Co.</h3>
+                  <p class="company-sub">Bengaluru, India · 2022 — 2026</p>
+                </div>
+              </header>
+
+              <div class="role">
+                <div class="role-head">
+                  <h4>Software Engineer 2 · Data Intelligence Platform, ETF</h4>
+                  <span class="role-date">Nov 2025 — Aug 2026</span>
+                </div>
+                <ul class="bullets">
+                  <li>
+                    Built scalable data platforms and AI-powered systems for ETF analytics and investment reporting
+                    within JPMorgan Asset Management, driving intelligent decision-making at global scale.
+                  </li>
                 </ul>
               </div>
-            </article>
 
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <span>Feb 2022 - Jan 2023</span>
-                <span>Remote</span>
+              <div class="role">
+                <div class="role-head">
+                  <h4>Software Engineer · Payments</h4>
+                  <span class="role-date">Feb 2023 — Nov 2025</span>
+                </div>
+                <ul class="bullets">
+                  <li>Fixed a critical billing bug, leading to more accurate invoices and increased stakeholder trust.</li>
+                  <li>Worked on the India Check Issuance system supporting Manager's and Corporate Cheque processing across banking channels.</li>
+                  <li>Migrated the entire database from cloud DBaaS to JPMC's Gaia Oracle Service with <strong>zero issues</strong>, cutting costs by eliminating GoldenGate.</li>
+                  <li>Built a data patching tool that helped the ops team update databases <strong>5× faster</strong> with fewer mistakes.</li>
+                  <li>Led automation of job deployments, reducing manual work and speeding up releases by <strong>40%</strong>.</li>
+                  <li>Implemented networking and load balancing for regional deployment — among the first applications to reach production readiness.</li>
+                </ul>
+                <ul class="chips" aria-label="Technologies">
+                  <li>Java</li><li>Spring Boot</li><li>Microservices</li><li>Oracle</li><li>SQL</li>
+                </ul>
               </div>
-              <div class="timeline-content">
-                <h3>DSA Problem Setter</h3>
-                <p class="timeline-company">Crio.Do</p>
-                <ul class="detail-list">
+
+              <div class="role">
+                <div class="role-head">
+                  <h4>Software Engineer Intern</h4>
+                  <span class="role-date">May 2022 — Jun 2022</span>
+                </div>
+                <ul class="bullets">
+                  <li>
+                    Contributed to the Cheque Engine Processing Application (CQE) for payment verification across
+                    partner banks, and built a React.js and SQL frontend module for the India market.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Crio.Do -->
+          <article class="company reveal">
+            <div class="company-rail" aria-hidden="true"><span class="rail-dot"></span></div>
+            <div class="card company-card">
+              <header class="company-header">
+                <div class="company-logo logo-crio" aria-hidden="true"><i class="fas fa-code"></i></div>
+                <div>
+                  <h3>Crio.Do</h3>
+                  <p class="company-sub">Remote</p>
+                </div>
+              </header>
+
+              <div class="role">
+                <div class="role-head">
+                  <h4>DSA Problem Setter</h4>
+                  <span class="role-date">Feb 2022 — Jan 2023</span>
+                </div>
+                <ul class="bullets">
                   <li>Created algorithmic problems, editorials, and edge-case driven test suites.</li>
                   <li>Added code stubs to the editor so candidates could focus on core logic implementation.</li>
                 </ul>
               </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <span>May 2022 - Jun 2022</span>
-                <span>Internship</span>
-              </div>
-              <div class="timeline-content">
-                <h3>Summer Intern</h3>
-                <p class="timeline-company">JPMorgan Chase &amp; Co.</p>
-                <p>
-                  Gained early exposure to software development in large-scale systems and laid the foundation
-                  for subsequent internship and full-time roles.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section cards-layout">
-          <article class="info-card">
-            <p class="section-kicker">Education</p>
-            <h2>National Institute of Engineering, Mysore</h2>
-            <p>Bachelor of Engineering in Computer Science, 2019-2023</p>
-            <p class="muted">
-              National Institute of Engineering, Mysore. Graduated with a CGPA of 9.1 / 10 while actively
-              participating in competitive programming and coding contests.
-            </p>
+            </div>
           </article>
+        </div>
+      </section>
 
-          <article class="info-card" id="skills">
-            <p class="section-kicker">Technical Skills</p>
-            <h2>Core stack</h2>
-            <ul class="tag-list">
-              <li>Java</li>
-              <li>C++</li>
-              <li>Python</li>
-              <li>Spring Boot</li>
-              <li>SQL</li>
-              <li>Git</li>
-              <li>Microservices</li>
-              <li>System Design</li>
-              <li>DBMS</li>
-              <li>OOP</li>
-              <li>Data Structures</li>
-              <li>Algorithms</li>
+      <!-- ============ Skills ============ -->
+      <section class="section container" id="skills">
+        <div class="section-head reveal">
+          <span class="mono-label">03 · skills</span>
+          <h2>Technical toolkit</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-card skill-card-wide reveal">
+            <div class="skill-title"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i><h3>AI &amp; Agents</h3></div>
+            <ul class="chips chips-lg">
+              <li>AI Agents</li><li>Agent Harness</li><li>Evaluation Frameworks</li><li>MCP</li>
+              <li>Agent Skills</li><li>LLM Prompting</li><li>Tool Calling</li>
             </ul>
-          </article>
-        </section>
-
-        <section class="section">
-          <div class="section-heading">
-            <p class="section-kicker">Achievements</p>
-            <h2>Competitive programming and certifications</h2>
           </div>
-
-          <div class="achievement-grid">
-            <article class="achievement-card">
-              <h3>Competitive Programming</h3>
-              <ul class="detail-list">
-                <li>ACM-ICPC Amritapuri Regionals qualifier twice in 2020 and 2021.</li>
-                <li>Facebook Hacker Cup 2021 qualified for Round 2.</li>
-                <li>Codeforces max rating 1589, Specialist.</li>
-                <li>CodeChef max rating 1978, 4-star.</li>
-              </ul>
-            </article>
-
-            <article class="achievement-card">
-              <h3>Rankings and Recognition</h3>
-              <ul class="detail-list">
-                <li>Rank 87 out of 8000+ participants in HackerRank HackFest 2020.</li>
-                <li>Rank 6 in Nokia Collegiate Code Warriors Hunt 2021, a state-level coding contest.</li>
-                <li>AWS Certified Cloud Practitioner.</li>
-              </ul>
-            </article>
+          <div class="card skill-card reveal">
+            <div class="skill-title"><i class="fas fa-code" aria-hidden="true"></i><h3>Languages</h3></div>
+            <ul class="chips chips-lg"><li>Java</li><li>C++</li><li>Python</li></ul>
           </div>
-        </section>
-
-        <section class="section" id="profiles">
-          <div class="section-heading">
-            <p class="section-kicker">Public Footprint</p>
-            <h2>Profiles and platforms</h2>
+          <div class="card skill-card reveal">
+            <div class="skill-title"><i class="fas fa-layer-group" aria-hidden="true"></i><h3>Technologies</h3></div>
+            <ul class="chips chips-lg"><li>Spring Boot</li><li>SQL</li><li>Git</li><li>Microservices</li></ul>
           </div>
-
-          <div class="profile-grid">
-        
-            <a class="profile-link" href="https://github.com/aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
-  
-            <a class="profile-link" href="https://leetcode.com/aagamjain04/" target="_blank" rel="noreferrer">
-              <i class="fas fa-code"></i>
-              <span>LeetCode</span>
-            </a>
-            <a class="profile-link" href="https://codeforces.com/profile/aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fas fa-trophy"></i>
-              <span>Codeforces</span>
-            </a>
-            <a class="profile-link" href="https://www.codechef.com/users/aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fas fa-laptop-code"></i>
-              <span>CodeChef</span>
-            </a>
-            <a class="profile-link" href="https://www.spoj.com/users/aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fas fa-terminal"></i>
-              <span>SPOJ</span>
-            </a>
-            <a class="profile-link" href="https://icpc.global/ICPCID/W2UTZ8MCM1E1" target="_blank" rel="noreferrer">
-              <i class="fas fa-medal"></i>
-              <span>ICPC</span>
-            </a>
-            <a class="profile-link" href="https://www.hackerrank.com/aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fab fa-hackerrank"></i>
-              <span>HackerRank</span>
-            </a>
-            <a class="profile-link" href="http://www.hackerearth.com/@aagamjain04" target="_blank" rel="noreferrer">
-              <i class="fas fa-globe"></i>
-              <span>HackerEarth</span>
-            </a>
-            
+          <div class="card skill-card skill-card-wide reveal">
+            <div class="skill-title"><i class="fas fa-diagram-project" aria-hidden="true"></i><h3>Concepts</h3></div>
+            <ul class="chips chips-lg">
+              <li>Data Structures &amp; Algorithms</li><li>System Design</li><li>DBMS</li><li>OOP</li><li>Distributed Systems</li>
+            </ul>
           </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+
+      <!-- ============ Achievements ============ -->
+      <section class="section container" id="achievements">
+        <div class="section-head reveal">
+          <span class="mono-label">04 · achievements</span>
+          <h2>Competitive programming &amp; certifications</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <a class="card achievement reveal" href="https://drive.google.com/file/d/1JnTAw9gTp1TtLU0ILn4JJJ2zLObRwk6N/view?usp=sharing" target="_blank" rel="noopener">
+            <i class="fas fa-medal" aria-hidden="true"></i>
+            <h3>ACM-ICPC Amritapuri Regionals</h3>
+            <p>Qualified twice — 2020 &amp; 2021</p>
+            <span class="link-hint">Certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="card achievement reveal" href="https://www.facebook.com/codingcompetitions/hacker-cup/2021/certificate/1559460067567866" target="_blank" rel="noopener">
+            <i class="fab fa-meta" aria-hidden="true"></i>
+            <h3>Facebook Hacker Cup 2021</h3>
+            <p>Qualified for Round 2</p>
+            <span class="link-hint">Certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="card achievement reveal" href="https://www.hackerrank.com/results/hackerrank-hackfest-2020/aagamjain04" target="_blank" rel="noopener">
+            <i class="fab fa-hackerrank" aria-hidden="true"></i>
+            <h3>HackerRank HackFest 2020</h3>
+            <p>Rank 87 out of 8000+ participants</p>
+            <span class="link-hint">Result <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="card achievement reveal" href="https://drive.google.com/file/d/19DJWP2FIMyPT1kqupmFoRvnN48Lc4t2K/view?usp=sharing" target="_blank" rel="noopener">
+            <i class="fas fa-trophy" aria-hidden="true"></i>
+            <h3>Nokia Code Warriors Hunt 2021</h3>
+            <p>Rank 6 — state-level coding contest</p>
+            <span class="link-hint">Certificate <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <a class="card achievement reveal" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/CC97QRZC9BR1QD5N" target="_blank" rel="noopener">
+            <i class="fab fa-aws" aria-hidden="true"></i>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>Amazon Web Services</p>
+            <span class="link-hint">Verify <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+          </a>
+          <div class="card achievement reveal">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <h3>Ratings</h3>
+            <p>Codeforces 1589 (Specialist) · CodeChef 1978 (4★)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Profiles ============ -->
+      <section class="section container" id="profiles">
+        <div class="section-head reveal">
+          <span class="mono-label">05 · elsewhere</span>
+          <h2>Profiles &amp; platforms</h2>
+        </div>
+
+        <div class="profiles-grid reveal">
+          <a class="profile" href="https://github.com/aagamjain04" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+          <a class="profile" href="https://www.linkedin.com/in/aagamjain04/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+          <a class="profile" href="https://leetcode.com/aagamjain04/" target="_blank" rel="noopener"><i class="fas fa-code" aria-hidden="true"></i><span>LeetCode</span></a>
+          <a class="profile" href="https://codeforces.com/profile/aagamjain04" target="_blank" rel="noopener"><i class="fas fa-chart-simple" aria-hidden="true"></i><span>Codeforces</span></a>
+          <a class="profile" href="https://www.codechef.com/users/aagamjain04" target="_blank" rel="noopener"><i class="fas fa-laptop-code" aria-hidden="true"></i><span>CodeChef</span></a>
+          <a class="profile" href="https://icpc.global/ICPCID/W2UTZ8MCM1E1" target="_blank" rel="noopener"><i class="fas fa-medal" aria-hidden="true"></i><span>ICPC</span></a>
+          <a class="profile" href="https://www.hackerrank.com/aagamjain04" target="_blank" rel="noopener"><i class="fab fa-hackerrank" aria-hidden="true"></i><span>HackerRank</span></a>
+          <a class="profile" href="https://www.spoj.com/users/aagamjain04" target="_blank" rel="noopener"><i class="fas fa-terminal" aria-hidden="true"></i><span>SPOJ</span></a>
+          <a class="profile" href="https://www.hackerearth.com/@aagamjain04" target="_blank" rel="noopener"><i class="fas fa-globe" aria-hidden="true"></i><span>HackerEarth</span></a>
+        </div>
+      </section>
+
+      <!-- ============ Contact ============ -->
+      <section class="container contact reveal" id="contact">
+        <div class="contact-card">
+          <span class="mono-label">06 · contact</span>
+          <h2>Let's build something.</h2>
+          <p>Open to conversations about agentic systems, backend engineering, and interesting problems.</p>
+          <div class="hero-actions contact-actions">
+            <a class="btn btn-primary" href="mailto:aagamjain.cs@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i> aagamjain.cs@gmail.com
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/aagamjain04/" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i> Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© <span id="year">2026</span> Aagam Jain</span>
+        <a href="#top">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </footer>
   </body>
 </html>
