@@ -14,7 +14,7 @@
     if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#f7f7f4" : "#0b0d12");
   }
 
-  applyTheme(root.dataset.theme || "dark");
+  applyTheme(root.dataset.theme || "light");
 
   if (toggle) {
     toggle.addEventListener("click", function () {

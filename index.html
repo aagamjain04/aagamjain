@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6EKMD14T4"></script>
@@ -17,7 +17,7 @@
         document.documentElement.classList.add("js");
         try {
           var saved = localStorage.getItem("theme");
-          document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+          document.documentElement.dataset.theme = saved === "dark" ? "dark" : "light";
         } catch (e) {}
       })();
     </script>
@@ -29,7 +29,7 @@
       name="description"
       content="Aagam Jain is a Software Engineer 2 at Salesforce (Agentforce Marketing), building production-grade AI agents, scalable backend systems, and data platforms."
     >
-    <meta name="theme-color" content="#0b0d12">
+    <meta name="theme-color" content="#f7f7f4">
     <link rel="canonical" href="https://aagamjain.netlify.app/">
 
     <meta property="og:type" content="website">
